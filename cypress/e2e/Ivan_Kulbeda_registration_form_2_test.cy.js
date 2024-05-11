@@ -115,7 +115,7 @@ describe('Section 2: Visual tests', () => {
            .and('be.greaterThan', 50) 
     });
 
-    it.only('Check navigation part', () => {
+    it('Check navigation part', () => {
         cy.get('nav').children().should('have.length', 2)
         cy.viewport(750, 1080)
         cy.get('nav').siblings('h1').should('have.text', 'Registration form number 2')
@@ -130,7 +130,7 @@ describe('Section 2: Visual tests', () => {
 
 
     it('Check that radio button list is correct', () => {
-        cy.get('input[type="radio"]').should('have.length', 3)
+        cy.get('input[type="radio"]').should('have.length', 4)
         cy.get('input[type="radio"]').next().eq(0).should('have.text','HTML')
         cy.get('input[type="radio"]').next().eq(1).should('have.text','CSS')
         cy.get('input[type="radio"]').next().eq(2).should('have.text','JavaScript')
@@ -147,7 +147,7 @@ describe('Section 2: Visual tests', () => {
     })
 
  
-    it.only('Check that checkbox list is correct', () => {
+    it('Check that checkbox list is correct', () => {
         cy.get('input[class="checkbox vehicles"]').next().eq(0).should('have.text','I have a bike')
         cy.get('input[class="checkbox vehicles"]').next().eq(1).should('have.text','I have a car')
         cy.get('input[class="checkbox vehicles"]').next().eq(2).should('have.text','I have a boat')
